@@ -15,20 +15,12 @@
             align-items: center;
             justify-content: space-between;
             padding: 15px;
-            /* background-color: #007bff; */
-            /* color: #fff; */
-        }
-        .header img {
-            height: 50px;
-        }
-        .header h1 {
-            margin: 0;
         }
         .search-box {
             margin: 20px 0;
         }
         .header .search-box {
-    margin-left: auto; /* Pushes the search box to the right */
+    margin-left: 60px !important; /* Pushes the search box to the right */
     margin-top: 0; /* Adjust if needed */
     margin-bottom: 0; /* Adjust if needed */
     flex-grow: 1; /* Allows the search box to take up remaining space if needed */
@@ -38,6 +30,16 @@
     width: 100%; /* Ensures the search input takes up available space */
     max-width: 300px; /* Optional: Set a maximum width if needed */
 }
+        .header img {
+            height: 50px;
+        }
+        .header .search-box {
+            margin-left: auto; 
+        }
+        .header .search-box input {
+            width: 100%; 
+            max-width: 300px; 
+        }
         .category-container {
             margin-top: 20px;
         }
@@ -111,22 +113,50 @@
             opacity: 1;
             bottom: 20px;
         }
+
+        /* Media query for laptop screens */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .category-card {
+                padding: 10px; /* Adjust padding */
+                margin-bottom: 15px; /* Adjust bottom margin */
+            }
+            .category-logo {
+                width: 80px; /* Adjust logo size for laptops */
+            }
+            .category-title {
+                font-size: 1.2em; /* Adjust title font size */
+            }
+        }
+       /* Media query for mobile screens */
+       @media (max-width: 767px) {
+            .category-card {
+                padding: 6px;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .category-logo {
+                width: 50px;
+            }
+            .category-title {
+                font-size: 0.9em;
+            }
+            .category-card:hover {
+                transform: scale(1.02);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://cdn.empgroup.com/wp-content/uploads/2023/04/dubizzle-logo-fix-width1.png"  alt="Marketplace Logo">
+        <img src="https://cdn.empgroup.com/wp-content/uploads/2023/04/dubizzle-logo-fix-width1.png" alt="Marketplace Logo">
         <div class="search-box">
             <input type="text" id="search-input" class="form-control" placeholder="Search for a category...">
         </div>
-        <!-- <h1>Marketplace</h1> -->
     </div>
 
-    <div class="container">
-       
-
+    <div class="container-fluid">
         <div class="row category-container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="vehicles.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/vehicles_noinline.f0509d15f4ed1cd4cb243005f067d354.svg" alt="Vehicles Logo" class="category-logo">
@@ -135,7 +165,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="properties.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/property-for-rent_noinline.afd1b8bf81720cc538aba324a684f145.svg" alt="Properties Logo" class="category-logo">
@@ -144,10 +174,10 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="mobiles.html" class="text-decoration-none text-dark">
                     <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/mobiles_noinline.09d825b23596fb63149b624156d2b3a9.svg" alt="Mobile & Accessories Logo" class="category-logo">
+                        <img src="https://www.dubizzle.com.lb/assets/mobiles_noinline.09d825b23596fb63149b624156d2b3a9.svg" alt="Mobile & Accessories Logo" style="width:15%" class="category-logo">
                         <h2 class="category-title">Mobile & Accessories</h2>
                         <div class="more-info">Explore Mobiles</div>
                     </div>
@@ -157,16 +187,16 @@
 
         <!-- Additional rows for other categories go here -->
         <div class="row category-container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="electronics_and_appliances.html" class="text-decoration-none text-dark">
                     <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/electronics_noinline.c7ce1083110c746b61c464da1aee2cac.svg" alt="Electronics & Appliances Logo" class="category-logo">
+                        <img src="https://www.dubizzle.com.lb/assets/electronics_noinline.c7ce1083110c746b61c464da1aee2cac.svg" alt="Electronics & Appliances Logo" style="width:15%"  class="category-logo">
                         <h2 class="category-title">Electronics & Appliances</h2>
                         <div class="more-info">Explore Electronics</div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="furniture_and_decor.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/furniture_noinline.4b36f5f518ccf6cdd3a14a4eeb4da403.svg" alt="Furniture & Decor Logo" class="category-logo">
@@ -175,7 +205,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="business_and_industrial.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/business_noinline.e03aa7b5f568bc12df7715720f162f2f.svg" alt="Business & Industrial Logo" class="category-logo">
@@ -187,9 +217,8 @@
         </div>
 
         <!-- Continue adding rows for other categories -->
-        <!-- Row 3 -->
         <div class="row category-container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="pets.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/animals_noinline.ea36bd3329bb1702bd147f401aedfa47.svg" alt="Pets Logo" class="category-logo">
@@ -198,39 +227,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="kids_and_babies.html" class="text-decoration-none text-dark">
-                    <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/kids_noinline.d100f6ef5e92135a30de2205076c0387.svg" alt="Kids & Babies Logo" class="category-logo">
-                        <h2 class="category-title">Kids & Babies</h2>
-                        <div class="more-info">Explore Kids</div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="sports_and_equipment.html" class="text-decoration-none text-dark">
-                    <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/bikes_noinline.c1fdef43200bcb37b23113da81e61c54.svg" alt="Sports & Equipment Logo" class="category-logo">
-                        <h2 class="category-title">Sports & Equipment</h2>
-                        <div class="more-info">Explore Sports</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Row 4 -->
-        <div class="row category-container">
-            <div class="col-md-4">
-                <a href="hobbies.html" class="text-decoration-none
-                <a href="hobbies.html" class="text-decoration-none text-dark">
-                    <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/books_noinline.d3cb283e02c531fbfb30248b1569885e.svg" alt="Hobbies Logo" class="category-logo">
-                        <h2 class="category-title">Hobbies</h2>
-                        <div class="more-info">Explore Hobbies</div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="jobs.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/jobs_noinline.6dd8e91ce71156d44df7794f802bab46.svg" alt="Jobs Logo" class="category-logo">
@@ -239,20 +236,18 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="fashion_and_beauty.html" class="text-decoration-none text-dark">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <a href="hobbies.html" class="text-decoration-none text-dark">
                     <div class="category-card">
-                        <img src="https://www.dubizzle.com.lb/assets/fashion_noinline.aa9c471af6b5ad17c4dad441c5d84e08.svg" alt="Fashion & Beauty Logo" class="category-logo">
-                        <h2 class="category-title">Fashion & Beauty</h2>
-                        <div class="more-info">Explore Fashion</div>
+                        <img src="https://www.dubizzle.com.lb/assets/books_noinline.d3cb283e02c531fbfb30248b1569885e.svg" alt="Hobbies Logo" class="category-logo">
+                        <h2 class="category-title">Hobbies</h2>
+                        <div class="more-info">Explore Hobbies</div>
                     </div>
                 </a>
             </div>
         </div>
-
-        <!-- Row 5 -->
         <div class="row category-container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-6 col-xs-12">
                 <a href="services.html" class="text-decoration-none text-dark">
                     <div class="category-card">
                         <img src="https://www.dubizzle.com.lb/assets/services_noinline.de3d667fd56bb6de8fa3137766c2c15c.svg" alt="Services Logo" class="category-logo">
@@ -263,55 +258,56 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <!-- Optional JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('search-input');
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const searchQuery = this.value.toLowerCase();
-                const cards = document.querySelectorAll('.category-card');
-
-                cards.forEach(function(card) {
-                    const title = card.querySelector('.category-title').textContent.toLowerCase();
-                    if (title.includes(searchQuery)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        }
-
-        document.querySelectorAll('.category-card').forEach(function(card) {
-            card.addEventListener('mouseenter', function() {
-                const logo = card.querySelector('.category-logo');
-                const title = card.querySelector('.category-title');
-                const moreInfo = card.querySelector('.more-info');
-
-                if (logo && title && moreInfo) {
-                    logo.style.transform = 'scale(1.2)';
-                    title.style.color = '#007bff';
-                    moreInfo.style.opacity = '1';
-                    moreInfo.style.bottom = '20px';
-                }
-            });
-
-            card.addEventListener('mouseleave', function() {
-                const logo = card.querySelector('.category-logo');
-                const title = card.querySelector('.category-title');
-                const moreInfo = card.querySelector('.more-info');
-
-                if (logo && title && moreInfo) {
-                    logo.style.transform = 'scale(1)';
-                    title.style.color = '#333';
-                    moreInfo.style.opacity = '0';
-                    moreInfo.style.bottom = '10px';
-                }
-            });
-        });
-    });
-    </script>
+        document.addEventListener('DOMContentLoaded', function() {
+         const searchInput = document.getElementById('search-input');
+         if (searchInput) {
+             searchInput.addEventListener('input', function() {
+                 const searchQuery = this.value.toLowerCase();
+                 const cards = document.querySelectorAll('.category-card');
+ 
+                 cards.forEach(function(card) {
+                     const title = card.querySelector('.category-title').textContent.toLowerCase();
+                     if (title.includes(searchQuery)) {
+                         card.style.display = 'block';
+                     } else {
+                         card.style.display = 'none';
+                     }
+                 });
+             });
+         }
+ 
+         document.querySelectorAll('.category-card').forEach(function(card) {
+             card.addEventListener('mouseenter', function() {
+                 const logo = card.querySelector('.category-logo');
+                 const title = card.querySelector('.category-title');
+                 const moreInfo = card.querySelector('.more-info');
+ 
+                 if (logo && title && moreInfo) {
+                     logo.style.transform = 'scale(1.2)';
+                     title.style.color = '#007bff';
+                     moreInfo.style.opacity = '1';
+                     moreInfo.style.bottom = '20px';
+                 }
+             });
+ 
+             card.addEventListener('mouseleave', function() {
+                 const logo = card.querySelector('.category-logo');
+                 const title = card.querySelector('.category-title');
+                 const moreInfo = card.querySelector('.more-info');
+ 
+                 if (logo && title && moreInfo) {
+                     logo.style.transform = 'scale(1)';
+                     title.style.color = '#333';
+                     moreInfo.style.opacity = '0';
+                     moreInfo.style.bottom = '10px';
+                 }
+             });
+         });
+     });
+     </script>
 </body>
 </html>
